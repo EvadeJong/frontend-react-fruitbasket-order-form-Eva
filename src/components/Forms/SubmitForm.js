@@ -3,7 +3,7 @@ import RadioButton from '../RadioButton.js';
 import TextArea from '../TextArea.js';
 import Input from '../Input.js';
 
-import React, { useState } from 'react';
+import React from 'react';
 import '../FormStyles.css';
 import { useForm, FormProvider } from 'react-hook-form';
 
@@ -37,18 +37,35 @@ function SubmitForm(){
                     labelName='Achternaam'
                     type = 'tekst'
                     registerName = 'achternaam'
+                    validation={{
+                        required: 'Achternaam is verplicht'
+                    }}
                 />
                 <Input
                     className='form'
                     labelName='Leeftijd'
                     type = 'number'
                     registerName = 'leeftijd'
+                    validation={{
+                        required: 'Leeftijd is verplicht',
+                        min: {
+                            value: 0,
+                            message: 'Leeftijd kan niet lager dan 0 zijn.'
+                        }
+                    }}
                 />
                 <Input
                     className='form'
                     labelName='Postcode'
                     type = 'text'
                     registerName = 'postcode'
+                    validation={{
+                        required: 'Postcode is verplicht',
+                        pattern: {
+                            value: /^(?:NL-)?(\d{4})\s*([A-Z]{2})$/i,
+                            message: 'Dit is geen geldig postcode'
+                        }
+                    }}
                 />
                 <SelectBox
                     className='form'
@@ -69,11 +86,15 @@ function SubmitForm(){
                         {name: "overdag", labelName: "Overdag"},
                         {name: "s-avonds", labelName: "s' Avonds"},
                     ]}
+
                 />
                 <TextArea
                     className = 'form'
                     labelName ='Opmerkingen'
                     registerName ='opmerkingen'
+                    validation={{
+                        required: 'Opmerking is verplicht'
+                    }}
                 />
 
                     <Input
@@ -82,6 +103,9 @@ function SubmitForm(){
                         registerName = 'checkbox'
                         htmlFor='terms-and-conditions'
                         checkboxLabelText='Ik ga akkoord met de voorwaarden'
+                        validation={{
+                            required: 'Je moet akkoord gaan met de algemene voorwaarden'
+                        }}
                     />
 
                 <div className='button'>
