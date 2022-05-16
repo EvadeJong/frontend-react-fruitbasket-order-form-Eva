@@ -24,72 +24,71 @@ function SubmitForm(){
     );
 
     return(
-<FormProvider {...methods}>
-    <form onSubmit={methods.handleSubmit(onSubmit)}>
-        <Input
-            className='form'
-            labelName='Voornaam'
-            type = 'text'
-            registerName = 'voornaam'
-        />
-        <Input
-            className='form'
-            labelName='Achternaam'
-            type = 'tekst'
-            registerName = 'achternaam'
-        />
-        <Input
-            className='form'
-            labelName='Leeftijd'
-            type = 'number'
-            registerName = 'leeftijd'
-        />
-        <Input
-            className='form'
-            labelName='postcode'
-            type = 'text'
-            registerName = 'postcode'
-        />
-        <SelectBox
-            className='form'
-            labelName='Bezorgfrequentie:'
-            selectBoxName='selectBox'
-            registerName='bezorgfrequentie'
-            options={[
-                {name: 'iedere-week', label: 'Iedere week'},
-                {name: 'om-de-week', label: 'Om de week'},
-                {name: 'iedere-maand', label: 'Iedere maand'}
-            ]}
-        />
-        <RadioButton
-            className='radioButtons'
-            typeName='radio'
-            registerName = 'bezorgmoment'
-            radioButtons={[
-                {name: "overdag", labelName: "Overdag"},
-                {name: "s-avonds", labelName: "s' Avonds"},
-            ]}
-        />
-        <TextArea
-            className = 'form'
-            labelName ='opmerkingen'
-            registerName ='opmerkingen'
-        />
-        <div>
-            <Input
-                className='checkbox'
-                type = 'checkbox'
-                registerName = 'checkbox'
-            />
-            <label htmlFor='terms-and-conditions'>
-                Ik ga akkoord met de voorwaarden
-            </label>
-        </div>
-        <div className='button'>
-            <input type = 'submit' />
-        </div>
-    </form>
-</FormProvider>
+        <FormProvider {...methods}>
+            <form onSubmit={methods.handleSubmit(onSubmit)}>
+                <Input
+                    className='form'
+                    labelName='Voornaam'
+                    type = 'text'
+                    registerName = 'voornaam'
+                />
+                <Input
+                    className='form'
+                    labelName='Achternaam'
+                    type = 'tekst'
+                    registerName = 'achternaam'
+                />
+                <Input
+                    className='form'
+                    labelName='Leeftijd'
+                    type = 'number'
+                    registerName = 'leeftijd'
+                />
+                <Input
+                    className='form'
+                    labelName='Postcode'
+                    type = 'text'
+                    registerName = 'postcode'
+                />
+                <SelectBox
+                    className='form'
+                    labelName='Bezorgfrequentie:'
+                    selectBoxName='selectBox'
+                    registerName='bezorgfrequentie'
+                    options={[
+                        {name: 'iedere-week', label: 'Iedere week'},
+                        {name: 'om-de-week', label: 'Om de week'},
+                        {name: 'iedere-maand', label: 'Iedere maand'}
+                    ]}
+                />
+                <RadioButton
+                    className='radioButtons'
+                    typeName='radio'
+                    registerName = 'bezorgmoment'
+                    radioButtons={[
+                        {name: "overdag", labelName: "Overdag"},
+                        {name: "s-avonds", labelName: "s' Avonds"},
+                    ]}
+                />
+                <TextArea
+                    className = 'form'
+                    labelName ='Opmerkingen'
+                    registerName ='opmerkingen'
+                />
+
+                    <Input
+                        className='checkbox'
+                        type = 'checkbox'
+                        registerName = 'checkbox'
+                        htmlFor='terms-and-conditions'
+                        checkboxLabelText='Ik ga akkoord met de voorwaarden'
+                    />
+
+                <div className='button'>
+                    <input type = 'submit' />
+                </div>
+            </form>
+        </FormProvider>
 
     )}
 

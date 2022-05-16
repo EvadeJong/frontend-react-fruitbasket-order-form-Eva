@@ -1,7 +1,7 @@
 import React from 'react';
 import {useFormContext} from "react-hook-form";
 
-function Input({className, labelName, type, registerName}){
+function Input({className, labelName, type, registerName, htmlFor, checkboxLabelText}){
     const {
         register,
         formState: {errors},
@@ -13,6 +13,9 @@ function Input({className, labelName, type, registerName}){
         <input
             type= {type}
             {...register(registerName)} />
+        <label htmlFor={htmlFor}>
+            {checkboxLabelText}
+        </label>
     </div>
     )
 };

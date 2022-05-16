@@ -9,8 +9,11 @@ function App() {
 
   return (
     <>
-      <FruitForm/>
-      <SubmitForm/>
+      <h1>Fruitmand bezorgservice</h1>
+
+            <FruitForm/>
+            <SubmitForm/>
+
     </>
   );
 }
